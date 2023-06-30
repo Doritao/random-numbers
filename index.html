@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>random numbers</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <img src="./sort 1.png" class="img-sorteio" />
+    </main>
+    <div class="container">
+      <p>Sortear um número</p>
+      <div class="caixinhas-numero">
+        <input type="number" id="n1" class="number-box" />
+        <input type="number" id="n2" class="number-box" />
+      </div>
+      <button id="myButton">Sortear</button>
+    </div>
+    <script>
+      function sortearNumero(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      const button = document.getElementById("myButton");
+      let n1number = document.getElementById("n1");
+      let n2number = document.getElementById("n2");
+
+      button.addEventListener("click", function () {
+        let n1 = Number(n1number.value);
+        let n2 = Number(n2number.value);
+        window.alert(`O número sorteado foi ${sortearNumero(n1, n2)}`);
+      });
+    </script>
+  </body>
+</html>
